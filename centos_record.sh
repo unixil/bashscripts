@@ -87,14 +87,13 @@ yum install kernel-uek-devel kernel-uek-headers
 yum update kernel
 mkdir /media/vmtools
 mount /dev/dvdrw /media/vmtools
-cd && mkdir vmtools
-
-cp /media/vmtools/* vmtools/ && cd vmtools
+cd
+mkdir vmtools
+cp /media/vmtools/* vmtools/
+cd vmtools
 tar xvf VMwareTools-10.0.0-2977863.tar.gz
-
 umount /media/vmtools
-
-cd vmware-tools-distrib
+cd vmware-tools-distrib/
 #############################################################################
 #these are used for oracle linux7 
 #cd bin
@@ -133,22 +132,22 @@ passwd grid
 
 echo "# Oracle Settings for grid" >> /home/oracle/.bash_profile
 echo "export TMP=/tmp" >> /home/oracle/.bash_profile
-echo "export TMPDIR=$TMP" >> /home/oracle/.bash_profile
+echo "export TMPDIR=\$TMP" >> /home/oracle/.bash_profile
 echo "export ORACLE_HOSTNAME=localhost.localdomain" >> /home/oracle/.bash_profile
 echo "export ORACLE_UNQNAME=cdb1" >> /home/oracle/.bash_profile
 echo "export ORACLE_BASE=/u01/app/oracle" >> /home/oracle/.bash_profile
-echo "export ORACLE_HOME=$ORACLE_BASE/product/12.1.0/dbhome_1" >> /home/oracle/.bash_profile
+echo "export ORACLE_HOME=\$ORACLE_BASE/product/12.1.0/dbhome_1" >> /home/oracle/.bash_profile
 echo "export ORACLE_SID=cdb1" >> /home/oracle/.bash_profile
-echo "export PATH=/usr/sbin:$PATH" >> /home/oracle/.bash_profile
-echo "export PATH=$ORACLE_HOME/bin:$PATH" >> /home/oracle/.bash_profile
-echo "export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib" >> /home/oracle/.bash_profile
-echo "export CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib" >> /home/oracle/.bash_profile
+echo "export PATH=/usr/sbin:\$PATH" >> /home/oracle/.bash_profile
+echo "export PATH=\$ORACLE_HOME/bin:\$PATH" >> /home/oracle/.bash_profile
+echo "export LD_LIBRARY_PATH=\$ORACLE_HOME/lib:/lib:/usr/lib" >> /home/oracle/.bash_profile
+echo "export CLASSPATH=\$ORACLE_HOME/jlib:\$ORACLE_HOME/rdbms/jlib" >> /home/oracle/.bash_profile
 echo "" >> /home/oracle/.bash_profile
 
 echo "alias sql='sqlplus "/ as sysdba"'" >>/home/oracle/.bash_profile
 echo "alias asm=\"sqlplus / as sysasm\"" >>/home/oracle/.bash_profile
-echo "alias na=\"cd $ORACLE_HOME/network/admin\"" >>/home/oracle/.bash_profile
-echo "alias dbs=\"cd $ORACLE_HOME/dbs\"" >>/home/oracle/.bash_profile
+echo "alias na=\"cd \$ORACLE_HOME/network/admin\"" >>/home/oracle/.bash_profile
+echo "alias dbs=\"cd \$ORACLE_HOME/dbs\"" >>/home/oracle/.bash_profile
 echo "export NLS_DATE_FORMAT='MON-DD-YYYY HH24:MI:SS';" >>/home/oracle/.bash_profile
 echo "export PS1='[\u@\h \W]\$ '" >>/home/oracle/.bash_profile
 cat<<EOF>>/home/oracle/.bash_profile
@@ -165,16 +164,16 @@ echo "" >>/home/oracle/.bash_profile
 echo "" >>/home/oracle/.bash_profile
 echo "# Oracle Settings for grid" >> /home/grid/.bash_profile
 echo "export TMP=/tmp" >> /home/grid/.bash_profile
-echo "export TMPDIR=$TMP" >> /home/grid/.bash_profile
+echo "export TMPDIR=\$TMP" >> /home/grid/.bash_profile
 echo "export ORACLE_HOSTNAME=localhost.localdomain" >> /home/grid/.bash_profile
 echo "export ORACLE_UNQNAME=cdb1" >> /home/grid/.bash_profile
 echo "export ORACLE_BASE=/u01/app/grid" >> /home/grid/.bash_profile
-echo "export ORACLE_HOME=$ORACLE_BASE/product/12.1.0/grid_1" >> /home/grid/.bash_profile
+echo "export ORACLE_HOME=\$ORACLE_BASE/product/12.1.0/grid_1" >> /home/grid/.bash_profile
 echo "export ORACLE_SID=cdb1" >> /home/grid/.bash_profile
 echo "export PATH=/usr/sbin:$PATH" >> /home/grid/.bash_profile
-echo "export PATH=$ORACLE_HOME/bin:$PATH" >> /home/grid/.bash_profile
-echo "export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib" >> /home/grid/.bash_profile
-echo "export CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib" >> /home/grid/.bash_profile
+echo "export PATH=\$ORACLE_HOME/bin:$PATH" >> /home/grid/.bash_profile
+echo "export LD_LIBRARY_PATH=\$ORACLE_HOME/lib:/lib:/usr/lib" >> /home/grid/.bash_profile
+echo "export CLASSPATH=\$ORACLE_HOME/jlib:\$ORACLE_HOME/rdbms/jlib" >> /home/grid/.bash_profile
 echo "" >> /home/grid/.bash_profile
 echo "alias sql='sqlplus "/ as sysdba"'" >>/home/grid/.bash_profile
 echo "alias asm='sqlplus "/ as sysasm"'" >>/home/grid/.bash_profile
