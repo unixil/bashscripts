@@ -1,0 +1,38 @@
+opacity = 0.7;          # menu
+inactive-opacity = 0.9; # application: such as inactive browser
+fade-out-step  = 0.01;
+fade-in-step   = 0.01;
+
+backend = "glx";
+
+dropdown_menu = { shadow = false; };
+popup_menu    = { shadow = false; };
+utility       = { shadow = false; };
+
+shadow = true;
+shadow-radius   = 20;
+shadow-opacity  = 1;
+shadow-offset-x = -20;
+shadow-offset-y = -20;
+
+shadow-exclude = [
+  "class_g = 'slop'"
+]
+
+wintypes:
+{
+  dock = { shadow = false };
+};
+
+unredir-if-possible = true;
+blur-background = true;
+
+
+blur:
+{
+  method = "kernel";
+  size = 50;
+  deviation = 5.0;
+};
+
+shadow-exclude-reg = "x40+0+0"

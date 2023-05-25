@@ -1,0 +1,101 @@
+#! /usr/bin/perl
+use strict;
+use utf8;
+use Data::Dumper qw(Dumper);
+
+
+require '/home/lixin/.urxvt/ext/get_color_scheme.pm';
+use String::Util qw(trim);
+
+our @terms=();
+
+sub create_list{
+    my %color_candidates_dict;
+    
+    %color_candidates_dict = get_color_scheme::get_all_color_schemes("/home/lixin/.themes/urxvt");
+    
+    my $n;
+    $n = scalar keys %color_candidates_dict;
+    my @scheme_keys;
+    @scheme_keys = keys %color_candidates_dict;
+    my @i = (0..$n);
+    my @color_preload_list=();
+    for (my $i=0; $i<$n; $i++){
+	    warn $i;
+	    my $tmp_string = %color_candidates_dict{$scheme_keys[$i]};
+	    $tmp_string =~ s/\\\\/\\/g;
+	    warn $tmp_string;
+	    push(@color_preload_list, $tmp_string);
+    }
+    warn scalar @color_preload_list;
+    my @n_list = (1 ..scalar @color_preload_list);
+
+    @color_preload_list
+}
+
+sub on_user_command{
+    my ($self, $cmd) = @_;
+    my @color_palete_list = @{ $self->{themes} };
+    my $n = scalar @color_palete_list;
+    
+    if ($cmd eq 'grab_test:grab_test'){
+	warn "hei";
+#	$self->{idx} = $self->{idx}%$n;
+        my $cmd_str = @color_palete_list[$self->{idx}];
+	$self->cmd_parse($cmd_str);
+        $self->{idx} = ($self->{idx}+1) % $n;
+    }elsif ($cmd eq 'grab_test:prev'){
+	warn "hhi";
+        $self->{idx} = ($self->{idx}-1) % $n;	
+#	$self->{idx} = $self->{idx}%$n;
+        my $cmd_str = @color_palete_list[$self->{idx}];
+	$self->cmd_parse($cmd_str);
+
+    }
+    ()
+}
+
+
+sub on_start{
+    my ($self) = @_;
+    
+    my @color_preload_list = create_list();
+    $self->{themes} = \@color_preload_list;
+    ()
+}
+
+
+=qod 
+begin of gabage I tried :(
+
+
+
+	# the flowing 2 lines should work the same. when the other function works fine, modify that.
+#	my $pipe;
+#	open($pipe, "|-", "echo -e " . "\"" . $color_palete_list[$self->{idx}] . "\"\n") or die;
+#	$self->cmd_parse("echo -e " . $color_palete_list[$self->{idx}]) or die;
+	#	$self->exec_async("echo -e " . "\"" . $color_palete_list[$self->{idx}] . "\"\n") or die;
+#	print @color_palete_list[$self->{idx}];
+
+#	$cmd_str =~ s/(^|[^\\])\\{2}($|[^\\])/$1\\$2/g;
+#	$cmd_str =~ s/(^|[^\\])\\{4}($|[^\\])/$1\\\\$2/g;
+	#	$cmd_str =~ s|\\{2}|\\|g;
+#	print Dumper $cmd_str;
+#	print "end\n";
+#	$cmd_str =~ s/'/"/g;
+#	print $cmd_str;
+#	my $my_test_cmd;
+#	$my_test_cmd = qq(\033]10;#1d1f21\007\033]11;#c5c8c6\007\033]12;#c5c8c6\007\033]4;6;#5e8d87\007\033]4;3;#de935f\007\033]4;9;#cc6666\007\033]4;12;#81a2be\007\033]4;11;#f0c674\007\033]4;5;#85678f\007\033]4;4;#5f819d\007\033]4;13;#b294bb\007\033]4;1;#a54242\007\033]4;14;#8abeb7\007\033]4;2;#8c9440\007\033]4;0;#282a2e\007\033]4;7;#707880\007\033]4;15;#c5c8c6\007\033]4;10;#b5bd68\007\033]4;8;#373b41\007);
+	
+#       	$my_test_cmd = join(qq("\\033]","10;#1d1f21\007\033]11;#c5c8c6\007\033]12;#c5c8c6\007\033]4;6;#5e8d87\007\033]4;3;#de935f\007\033]4;9;#cc6666\007\033]4;12;#81a2be\007\033]4;11;#f0c674\007\033]4;5;#85678f\007\033]4;4;#5f819d\007\033]4;13;#b294bb\007\033]4;1;#a54242\007\033]4;14;#8abeb7\007\033]4;2;#8c9440\007\033]4;0;#282a2e\007\033]4;7;#707880\007\033]4;15;#c5c8c6\007\033]4;10;#b5bd68\007\033]4;8;#373b41\007"));
+#	warn "hi";
+#	warn $cmd_str;
+	#	print Dumper \@color_palete_list;
+
+#	print $my_test_cmd;
+#	$self->cmd_parse($my_test_cmd);
+	
+#	$self->cmd_parse(substr($cmd_str,57,));	
+#	$self->cmd_parse("echo -e '".$cmd_str."'") or die $?; 
+#	$self->cmd_parse( $color_palete_list[$self->{idx}]) or die $!;
+=cut

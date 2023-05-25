@@ -1,0 +1,110 @@
+=head2 Sat Oct  8 14:46:57 2022: C<Module> L<local::lib|local::lib>
+
+=over 4
+
+=item *
+
+C<installed into: /home/lixin/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.000029>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat Oct  8 14:47:38 2022: C<Module> L<ExtUtils::Config|ExtUtils::Config>
+
+=over 4
+
+=item *
+
+C<installed into: /home/lixin/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.008>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat Oct  8 14:47:40 2022: C<Module> L<ExtUtils::Helpers|ExtUtils::Helpers>
+
+=over 4
+
+=item *
+
+C<installed into: /home/lixin/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.026>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat Oct  8 14:47:42 2022: C<Module> L<ExtUtils::InstallPaths|ExtUtils::InstallPaths>
+
+=over 4
+
+=item *
+
+C<installed into: /home/lixin/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.012>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sat Oct  8 14:48:48 2022: C<Module> L<Switch|Switch>
+
+=over 4
+
+=item *
+
+C<installed into: /home/lixin/perl5/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.17>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+

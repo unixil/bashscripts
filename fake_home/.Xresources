@@ -1,0 +1,148 @@
+!URxvt.perl-lib: /home/lixin/.urxvt/ext
+URxvt.perl-ext-common: default,matcher,grab_test
+URxvt.color-themes.themedir:  ~/.themes/urxvt
+
+URxvt.keysym.M-n:   perl:grab_test:grab_test
+URxvt.keysym.M-p:   perl:grab_test:prev
+
+URxvt.color-themes.state-file: ~/.urxvt-theme
+!URxvt.color-themes.autosave: 1
+!URxvt.keysym.M-C-l: perl:color-themes:load-state
+!URxvt.keysym.M-C-s: perl:color-themes:save-state
+
+emacs*useXIM:true
+xterm*termName: xterm-256color
+URxvt.saveLines: 65000
+URxvt.scrollBar: false
+!URxvt*transparent:  false
+! set to true if you want transparant with compton
+xterm*dynamicColors: true
+urxvt*dynamicColors: on
+
+Rxvt*keysym.Control-Shift-F10: command:\033]11;#9c97a5\007\033]10;#777777\007\033]12;#dcdcdc\007\033]4;0;#3f3f3f\007\033]4;1;#705050\007\033]4;2;#60b48a\007\033]4;3;#dfaf8f\007\033]4;4;#9ab8d7\007\033]4;5;#dc8cc3\007\033]4;6;#8cd0d3\007\033]4;7;#dcdcdc\007\033]4;8;#709080\007\033]4;9;#dca3a3\007\033]4;10;#72d5a3\007\033]4;11;#f0dfaf\007\033]4;12;#94bff3\007\033]4;13;#ec93d3\007\033]4;14;#93e0e3\007\033]4;15;#ffffff\007
+URxvt*keysym.Control-Shift-F11: command:\033]11;#000000\007\033]10;#ffffff\007\033]12;#ffffff\007\033]4;0;#000000\007\033]4;1;#cc0000\007\033]4;2;#4e9a06\007\033]4;3;#c4a000\007\033]4;4;#3465a4\007\033]4;5;#75507b\007\033]4;6;#06989a\007\033]4;7;#d3d7cf\007\033]4;8;#555753\007\033]4;9;#ef2929\007\033]4;10;#8ae234\007\033]4;11;#fce94f\007\033]4;12;#729fcf\007\033]4;13;#ad7fa8\007\033]4;14;#34e2e2\007\033]4;15;#eeeeec\007
+URxvt*keysym.Control-Shift-F12: command:\033]11;#000000\007\033]10;#a9a9a9\007\033]12;#a9a9a9\007\033]4;0;#000000\007\033]4;1;#cc0000\007\033]4;2;#00cc00\007\033]4;3;#cccc00\007\033]4;4;#0000cc\007\033]4;5;#cc00cc\007\033]4;6;#00cccc\007\033]4;7;#cccccc\007\033]4;8;#555555\007\033]4;9;#ff0000\007\033]4;10;#00ff00\007\033]4;11;#ffff00\007\033]4;12;#0000ff\007\033]4;13;#ff00ff\007\033]4;14;#00ffff\007\033]4;15;#ffffff\007
+
+
+URxvt.letterSpace: -1
+URxvt.tabbed.saveLines: 1000
+URxvt.tabbed.scrollBar: false
+URxvt.tabbed.tabbar-fg: 3
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 0
+URxvt.tabbed.tab-bg: 1
+URxvt.secondaryScroll: true
+URxvt.tabbed.secondaryScroll: true
+URxvt.preeditType: OnTheSpot,None
+URxvt.font:xft:WenQuanYi Micro Hei Mono:pixelsize=12:minspace=true,xft:Inconsolata for Powerline, xft:Source Code Pro
+!urxvt.font: xft:WenQuanYi Micro Hei, xft:Source Code Pro
+URxvt.tabbed.urlLauncher: firefox
+
+URxvt.matcher.button: 1
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt.urlLauncher: firefox
+!URxvt*shading: 50 ! this should be used by compton, but I am not sure, activate it for insurance
+URxvt*depth: 32
+URxvt*locale: zh_CN.UTF-8
+
+
+URxvt.inputMethod:fcitx
+!URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true
+
+!URxvt.font: xft:Consolas:size=10, xft:Inconsolata for Powerline
+!URxvt.tintColor: #303030 
+!setting a fake background
+!!start color region!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! special
+!*.foreground:   #93a1a1
+URxvt*foreground: #ffffff
+URxvt*background: [50]#303030 
+
+urxvt.background:       rgba:ff00/ff00/ff00/cccc
+!URxvt.transparent:   true
+!URxvt.shading: 20
+
+!URxvt*background: rgba: 0000/0000/0000/0000
+!*.background:   #37414b
+!*.background:   [50]#002b36
+!*.background:   #717981 ! silver grey
+!*.background:   #385067
+*.cursorColor:  #93a1a1
+
+! black
+*.color0:       #002b36
+*.color8:       #657b83
+
+! red
+*.color1:       #dc322f
+*.color9:       #dc322f
+
+! green for directory
+!*.color2:       #859900
+*.color2:	Gray75
+*.color10:      #859900
+
+! yellow
+*.color3:       #b58900
+*.color11:      #b58900
+
+! blue
+*.color4:       #268bd2
+*.color12:      #268bd2
+
+! magenta
+*.color5:       #6c71c4
+*.color13:      #6c71c4
+
+! cyan
+*.color6:       #2aa198
+*.color14:      #2aa198
+
+! white
+*.color7:       #93a1a1
+*.color15:      #fdf6e3
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!URxvt*font: xft:Mononoki:size=9,xft:DejaVuSansMono NF:pixelsize=15,xft:Everson Mono:pixelsize=15,xft:Symbola:size=10
+
+!URxvt*boldFont: xft:Mononoki:bold:size=9,xft:DejaVuSansMono NF:pixelsize=15,xft:Everson Mono:pixelsize=15,xft:Symbola:size=10
+
+!URxvt*italicFont: xft:Mononoki:italic:autohint=true:size=9,xft:DejaVuSansMono NF:pixelsize=15,xft:Everson Mono:pixelsize=15,xft:Symbola:size=10
+
+!URxvt*boldItalicFont: xft:Mononoki:bold:italic:autohint=true:size=9,xft:DejaVuSansMono NF:pixelsize=15,xft:Everson Mono:pixelsize=15,xft:Symbola:size=10
+
+!!URxvt.font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso8859-1
+
+!!URxvt.font: -misc-fixed-bold-r-normal--15-140-75-75-c-90-iso8859-1
+
+!!URxvt.font: xft:monaco:bold:size=10
+
+
+! Appearance
+!URxvt.font:           xft:Terminus (TTF) for Powerline:MediumForPowerline:size=9:antialias=true,xft:Inconsolata\ For\ Powerline:size=9:antialias=true
+!URxvt.imFont:         xft:Terminus (TTF) for Powerline:MediumForPowerline:size=9:antialias=true,xft:Inconsolata\ For\ Powerline:size=9:antialias=true
+!URxvt.boldFont:       xft:Terminus (TTF) for Powerline:MediumForPowerline:size=9:antialias=true,xft:Inconsolata\ For\ Powerline:size=9:antialias=true
+!URxvt.italicFont:     xft:Terminus (TTF) for Powerline:MediumForPowerline:size=9:antialias=true,xft:Inconsolata\ For\ Powerline:size=9:antialias=true
+!URxvt.boldItalicFont: xft:Terminus (TTF) for Powerline:MediumForPowerline:size=9:antialias=true,xft:Inconsolata\ For\ Powerline:size=9:antialias=true
+
+URxvt.intensityStyles: false
+URxvt.iconFile:       /usr/share/icons/Faenza/apps/scalable/terminal.svg
+URxvt.boldMode:       false
+URxvt.skipBuiltinGlyphs: true
+URxvt.loginShell: true
+URxvt*title: urxvt
+URxvt*termName: rxvt-unicode-256color
+URxvt*urgentOnBell: true
+
+Xft.antialias:  true
+Xft.autohint:   false
+Xft.dpi:        96
+Xft.hinting:    true
+Xft.hitstyle:   hintslight
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgba
+
+
+
+
